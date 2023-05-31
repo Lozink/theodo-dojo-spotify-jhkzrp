@@ -14,6 +14,7 @@ const App = () => {
   const goToNextTrack = () => {
     setTrackIndex(trackIndex + 1);
   };
+  const apiToken = '';
   return (
     <div className="App">
       <header className="App-header">
