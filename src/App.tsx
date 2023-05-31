@@ -22,6 +22,16 @@ const App = () => {
 		queryFn: fetchTracks
   });
   console.log(tracks)
+  const AlbumCover = ({track}) =>  {
+    const src = track.track?.album?.images?.[0]?.url; // A changer ;)
+    return (
+        <img src={src} style={{ width: 400, height: 400 }} />
+    );
+  }
+  const currentTrack=tracks?.[trackIndex];
+  const track0=tracks?.[0];
+  const track1=tracks?.[1];
+  const track2=tracks?.[2];
   return (
     <div className="App">
       <header className="App-header">
@@ -30,10 +40,15 @@ const App = () => {
       </header>
       <div className="App-images">
         <p>ET ALORS CENTRALISATION CA EN EST OU ? PETITE REU SOON ?</p>
-        <audio src={trackUrls[trackIndex]} autoPlay controls />
+        <AlbumCover track={currentTrack}/>
+        <audio src={currentTrack?.track?.preview_url} autoPlay controls />
         <button onClick={goToNextTrack}>Next track</button>
       </div>
-      <div className="App-buttons"></div>
+      <div className="App-buttons">
+        <button>{track0?.track?.name}</button>
+        <button>{track1?.track?.name}</button>
+        <button>{track2?.track?.name}</button>
+      </div>
     </div>
   );
 };
