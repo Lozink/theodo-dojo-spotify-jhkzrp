@@ -46,7 +46,7 @@ const App = () => {
         <AlbumCover track={currentTrack}/>
         <audio src={currentTrack?.track?.preview_url} autoPlay controls />
         <button onClick={goToPreviousTrack}>Previous track</button>
-        <button onClick={goToNextTrack}>Next track</button>
+        
       </div>
       <div className="App-buttons">
         <button>{track0?.track?.name}</button>
