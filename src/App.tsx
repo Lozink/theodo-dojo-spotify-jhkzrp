@@ -1,6 +1,8 @@
 import logo from './assets/logo.svg';
 import './App.css';
 import { useState } from 'react';
+import { useQuery } from 'react';
+import './lib/fetchTracks.js';
 
 const App = () => {
   const trackUrls = [
@@ -15,6 +17,10 @@ const App = () => {
     setTrackIndex(trackIndex + 1);
   };
   const apiToken = '';
+  const { data: tracks } = useQuery({
+		queryKey: ['tracks'],
+		queryFn: fetchTracks
+  });
   return (
     <div className="App">
       <header className="App-header">
