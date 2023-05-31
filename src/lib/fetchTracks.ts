@@ -2,7 +2,7 @@ const apiToken = '';
 import { SavedTrack, Track } from 'spotify-types';
 
 export const fetchTracks = async () => {
-  const apiToken = 'BQCheKvAxXwNPkmMsF_k1xppV1oFwCjuc48sEuK9dsBCny3HrQxZ8J3vWp_UuLks0VO2kVftK3XqHLgl3RXtUaXlTi-06hyMoeXlqT6Eag8rhjN1BSjQUdYcb_LbwLnojlfpw_79dxxvl_71H3krl8Me0GYqXEonRrRhShncp3GiPkWF0jvI_gYiBjIFa0F2pieuWN-o8XDEXSna0A'
+  const apiToken = 'BQD_rn7r7XLlrxj9QxA8z4brjmVJ94FLfbMtDWMK8Cplv-Yzj07lXr-ku3Qrm8i1Ydo4ZhW9dnzDCl_Erejbq4p30_FydADUyyUO_hNG9SPnUdWlxsI01JXqH6QYvuYJiSeITLeibgPqMvLX9qWXnFr_APs4lc-97yFsG1MdijI_jMoLIYO9nIYBE0_gTsamffWSQoo-JE6XUY_oFw'
   const response = await fetch('https://api.spotify.com/v1/me/tracks', {
     method: 'GET',
     headers: {
