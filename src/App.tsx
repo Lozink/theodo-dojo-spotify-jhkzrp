@@ -32,9 +32,18 @@ const App = () => {
     );
   }
   const currentTrack=tracks?.[trackIndex];
+  const actual_id = currentTrack?.track?.id;
   const track0=tracks?.[0];
   const track1=tracks?.[1];
   const track2=tracks?.[2];
+  const checkAnswer = (id) => {
+    if (id=actual_id) {
+      swal('Bravo frero');
+    }
+    else {
+      swal('Ah nan');
+    }
+  }
   return (
     <div className="App">
       <header className="App-header">
@@ -46,10 +55,10 @@ const App = () => {
         <AlbumCover track={currentTrack}/>
         <audio src={currentTrack?.track?.preview_url} autoPlay controls />
         <button onClick={goToPreviousTrack}>Previous track</button>
-        
+        <button onClick={goToNextTrack}>Next track</button>
       </div>
       <div className="App-buttons">
-        <button>{track0?.track?.name}</button>
+        <button onClick={() => checkAnswer(track0?.track?.id)}>{track0?.track?.name}</button>
         <button>{track1?.track?.name}</button>
         <button>{track2?.track?.name}</button>
       </div>
@@ -58,3 +67,7 @@ const App = () => {
 };
 
 export default App;
+
+function swal(arg0: string) {
+throw new Error('Function not implemented.');
+}
