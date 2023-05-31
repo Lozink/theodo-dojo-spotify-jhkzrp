@@ -1,6 +1,7 @@
 const apiToken = '';
 
 export const fetchTracks = async () => {
+  const apiToken = "https://api.spotify.com/v1/me/shows?offset=0&limit=20"
   const response = await fetch('https://api.spotify.com/v1/me/tracks', {
     method: 'GET',
     headers: {
