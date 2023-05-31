@@ -3,6 +3,7 @@ import './App.css';
 import { useState } from 'react';
 import { fetchTracks} from './lib/fetchTracks.js';
 import { useQuery } from '@tanstack/react-query';
+import { SavedTrack } from 'spotify-types';
 
 const App = () => {
   const trackUrls = [
@@ -16,11 +17,11 @@ const App = () => {
   const goToNextTrack = () => {
     setTrackIndex(trackIndex + 1);
   };
-  const apiToken = '';
   const { data: tracks } = useQuery({
 		queryKey: ['tracks'],
 		queryFn: fetchTracks
   });
+  console.log(tracks?.length)
   return (
     <div className="App">
       <header className="App-header">
@@ -28,7 +29,7 @@ const App = () => {
         <h1 className="App-title">C'EST LE BLIND TEST</h1>
       </header>
       <div className="App-images">
-        <p>ET ALORS CENTRALISATION CA EN EST OU ?</p>
+        <p>ET ALORS CENTRALISATION CA EN EST OU ? PETITE REU SOON ?</p>
         <audio src={trackUrls[trackIndex]} autoPlay controls />
         <button onClick={goToNextTrack}>Next track</button>
       </div>
