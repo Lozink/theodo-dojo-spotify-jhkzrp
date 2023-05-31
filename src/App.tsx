@@ -17,11 +17,11 @@ const App = () => {
   const goToNextTrack = () => {
     setTrackIndex(trackIndex + 1);
   };
-  const { data: tracks } = useQuery({
+  const { data:tracks } : {data:undefined|SavedTrack[]}= useQuery({
 		queryKey: ['tracks'],
 		queryFn: fetchTracks
   });
-  console.log(tracks?.length)
+  console.log(tracks)
   return (
     <div className="App">
       <header className="App-header">
