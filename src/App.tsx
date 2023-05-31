@@ -1,8 +1,8 @@
 import logo from './assets/logo.svg';
 import './App.css';
 import { useState } from 'react';
-import { useQuery } from 'react';
-import './lib/fetchTracks.js';
+import { fetchTracks} from './lib/fetchTracks.js';
+import { useQuery } from '@tanstack/react-query';
 
 const App = () => {
   const trackUrls = [
